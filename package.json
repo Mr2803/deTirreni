@@ -1,0 +1,14 @@
+{
+  "name": "bedandbreakgabbo",
+  "version": "1.0.0",
+  "description": "Responsive b&b website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o public/css/ --recursive"
+  },
+  "author": "Marco Rispoli",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
