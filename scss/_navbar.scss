@@ -1,10 +1,14 @@
 nav{
-display:flex;
-justify-content: space-around;
-align-items: center;
-min-height: 8vh;
-font-family: 'Poppins', sans-serif;
-background-color: green;
+display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: green;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
     .logo{
     color:white;
     text-transform:uppercase;

@@ -6,4 +6,16 @@
   box-sizing: border-box;
 }
 
+img{
+  width: 100%;
+}
+
+.noGutter{
+  padding:0;
+  margin:0;
+}
+
+.debug{
+  border:1px solid grey;
+}
 
