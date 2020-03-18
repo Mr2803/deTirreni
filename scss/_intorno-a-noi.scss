@@ -1,0 +1,25 @@
+.card{
+    /* border:none; */
+    &:hover{
+        img{
+            opacity: 0.8;
+            transform: scale(1.2);
+            transform: translate(-45deg);
+        }
+    }
+    .imgContainer{
+        cursor: pointer;
+        overflow: hidden;
+        height:200px;
+        
+        img{
+            height: 100%;
+            transition:transform .6s;
+            
+        }
+    }
+}
+
+.shadow{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}

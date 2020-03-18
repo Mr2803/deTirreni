@@ -1,0 +1,14 @@
+#map {
+        width: 100%;
+        height: 50vh;
+        text-align: initial;
+        canvas{
+            height:100%;
+        }
+        /* .mapboxgl-canvas{
+          position: inherit !important;
+        } */
+    }
+.tomtomAttribution{
+  display:none;
+}

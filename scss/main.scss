@@ -1,4 +1,8 @@
 @import 'navbar';
+@import 'home';
+@import 'intorno-a-noi';
+@import 'suite';
+@import 'contatti';
 
 *{
   margin:0;
@@ -19,3 +23,11 @@ img{
   border:1px solid grey;
 }
 
+
+.myScrollOnTop{
+  position : fixed;
+  bottom:20px;
+  left:20px;
+  z-index:999;
+  transition: all 0.6s ease;
+}
