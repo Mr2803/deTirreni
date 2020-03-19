@@ -37,6 +37,36 @@
 }
 }
 
+section.suiteSec{
+ #carouselExampleIndicators{
+   height: 80vh;
+   img{
+     height: 80vh;
+   }
+   .nomeStanza{
+     display:flex;
+     position:absolute;
+     height:20px ;
+     background-color : brown;
+     bottom : -20px;
+     z-index: 20;
+     padding:30px;
+     left:30px;
+     justify-content: center;
+     align-items: center;
+   }
+  }
+}
+.owl-theme{
+  .owl-dots{
+    .owl-dot{
+      span{
+         display:none;
+        }
+      }
+    }
+  }
+
 
 
 

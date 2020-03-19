@@ -1,10 +1,28 @@
+#carouselExampleIndicators{
+   height: 100vh;
+   img{
+     height: 100vh;
+   }
+}
+
 .owl-item{
     margin:0 !important;
     img{
-        height: 200px;
+        height: 350px;
     }
 }
-
 .owl-nav{
     display:none;
+}
+.owl-dots{
+    display:none;
+}
+
+@media screen and (max-width:768px){
+    #carouselExampleIndicators{
+    height: 85vh;
+    img{
+        height: 85vh;
+        }
+    } 
 }

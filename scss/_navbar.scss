@@ -1,14 +1,21 @@
 nav{
 display: flex;
-    justify-content: space-around;
+padding:0.7rem;
+    justify-content: space-between;
     align-items: center;
     min-height: 8vh;
     font-family: 'Poppins', sans-serif;
-    background-color: green;
+    background-color: transparent;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
     .logo{
     color:white;
     text-transform:uppercase;
@@ -24,7 +31,7 @@ display: flex;
         }
         a{
             text-decoration: none;
-            color:white;
+            color:black;
             font-weight: bold;
             letter-spacing: 3px;
             font-size: 14px;
@@ -62,21 +69,25 @@ display: flex;
     }
     nav{
         .nav-active{
-            transform:translateX(0%) !important;
+            transform:translateX(100%) !important;
         }
         .my_nav-links{
             position:fixed;
             width: 50%;
-            right:0px;
-            height:92vh;
-            top:8vh;
-            background:green;
+            left:-50%;
+            height:100vh;
+            top:0;
+            background:#262626;
+            
             flex-direction: column;
             align-items: center;
-            transform:translateX(100%);
+            transform:translateX(0%);
             transition:transform 0.5s ease-in;
             li{
                 opacity:0;
+            }
+            a{
+                color:white !important;
             }
             
         }

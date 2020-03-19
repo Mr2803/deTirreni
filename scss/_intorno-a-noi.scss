@@ -1,10 +1,10 @@
 .card{
-    /* border:none; */
+    border:none;
+    
     &:hover{
         img{
             opacity: 0.8;
             transform: scale(1.2);
-            transform: translate(-45deg);
         }
     }
     .imgContainer{
@@ -13,9 +13,46 @@
         height:200px;
         
         img{
+            position:relative;
             height: 100%;
             transition:transform .6s;
             
+        }
+    }
+    .card-body{
+        padding:0;
+        padding: 1.25rem 0 0.1rem 0;
+        h5{
+            letter-spacing: 1px;
+        }
+        
+        .card-text{
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            font-family: 'Raleway', sans-serif;
+            color:#565656;
+        }
+        .myACont{
+            width: 100%;
+            border-top:1px dotted rgb(172, 167, 167);
+            /* border-bottom:1px dotted rgb(172, 167, 167); */
+            padding:0.8rem 0 0.8rem 0;
+            &:hover{
+                   a{
+                    left:10px;
+                    color:green;
+                   } 
+                }
+            a{
+                
+                position:relative;
+                left:0;
+                transition:all 0.6s ease;
+                text-decoration: none;
+                color:#242424;
+                
+            }
         }
     }
 }

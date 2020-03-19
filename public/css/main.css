@@ -1,14 +1,20 @@
 nav {
   display: flex;
-  justify-content: space-around;
+  padding: 0.7rem;
+  justify-content: space-between;
   align-items: center;
   min-height: 8vh;
   font-family: 'Poppins', sans-serif;
-  background-color: green;
+  background-color: transparent;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 999; }
+  z-index: 999;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
   nav .logo {
     color: white;
     text-transform: uppercase;
@@ -22,7 +28,7 @@ nav {
       list-style-type: none; }
     nav .my_nav-links a {
       text-decoration: none;
-      color: white;
+      color: black;
       font-weight: bold;
       letter-spacing: 3px;
       font-size: 14px; }
@@ -43,20 +49,22 @@ nav {
   body {
     overflow-x: hidden; }
   nav .nav-active {
-    transform: translateX(0%) !important; }
+    transform: translateX(100%) !important; }
   nav .my_nav-links {
     position: fixed;
     width: 50%;
-    right: 0px;
-    height: 92vh;
-    top: 8vh;
-    background: green;
+    left: -50%;
+    height: 100vh;
+    top: 0;
+    background: #262626;
     flex-direction: column;
     align-items: center;
-    transform: translateX(100%);
+    transform: translateX(0%);
     transition: transform 0.5s ease-in; }
     nav .my_nav-links li {
       opacity: 0; }
+    nav .my_nav-links a {
+      color: white !important; }
   nav .myBurger {
     display: block;
     cursor: pointer; }
@@ -75,27 +83,66 @@ nav {
     opacity: 1;
     transform: translateX(0px); } }
 
+#carouselExampleIndicators {
+  height: 100vh; }
+  #carouselExampleIndicators img {
+    height: 100vh; }
+
 .owl-item {
   margin: 0 !important; }
   .owl-item img {
-    height: 200px; }
+    height: 350px; }
 
 .owl-nav {
   display: none; }
 
+.owl-dots {
+  display: none; }
+
+@media screen and (max-width: 768px) {
+  #carouselExampleIndicators {
+    height: 85vh; }
+    #carouselExampleIndicators img {
+      height: 85vh; } }
+
 .card {
-  /* border:none; */ }
+  border: none; }
   .card:hover img {
     opacity: 0.8;
-    transform: scale(1.2);
-    transform: translate(-45deg); }
+    transform: scale(1.2); }
   .card .imgContainer {
     cursor: pointer;
     overflow: hidden;
     height: 200px; }
     .card .imgContainer img {
+      position: relative;
       height: 100%;
       transition: transform .6s; }
+  .card .card-body {
+    padding: 0;
+    padding: 1.25rem 0 0.1rem 0; }
+    .card .card-body h5 {
+      letter-spacing: 1px; }
+    .card .card-body .card-text {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      font-family: 'Raleway', sans-serif;
+      color: #565656; }
+    .card .card-body .myACont {
+      width: 100%;
+      border-top: 1px dotted #aca7a7;
+      /* border-bottom:1px dotted rgb(172, 167, 167); */
+      padding: 0.8rem 0 0.8rem 0; }
+      .card .card-body .myACont:hover a {
+        left: 10px;
+        color: green; }
+      .card .card-body .myACont a {
+        position: relative;
+        left: 0;
+        transition: all 0.6s ease;
+        text-decoration: none;
+        color: #242424; }
 
 .shadow {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; }
@@ -130,6 +177,25 @@ nav {
     color: white;
     transform: rotateY(180deg); }
 
+section.suiteSec #carouselExampleIndicators {
+  height: 80vh; }
+  section.suiteSec #carouselExampleIndicators img {
+    height: 80vh; }
+  section.suiteSec #carouselExampleIndicators .nomeStanza {
+    display: flex;
+    position: absolute;
+    height: 20px;
+    background-color: brown;
+    bottom: -20px;
+    z-index: 20;
+    padding: 30px;
+    left: 30px;
+    justify-content: center;
+    align-items: center; }
+
+.owl-theme .owl-dots .owl-dot span {
+  display: none; }
+
 #map {
   width: 100%;
   height: 50vh;
@@ -159,8 +225,64 @@ img {
   border: 1px solid grey; }
 
 .myScrollOnTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8e8e8;
+  font-size: 20px;
+  color: #28262b;
+  padding: 10px;
+  width: 40px;
+  border-radius: 3px;
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
   z-index: 999;
-  transition: all 0.6s ease; }
+  transition: all 0.5s ease;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
+  .myScrollOnTop:hover {
+    background: #28262b;
+    color: #e8e8e8; }
+
+footer {
+  background-color: #242424;
+  color: #e8e8e8; }
+
+.myDrop {
+  position: relative; }
+  .myDrop .my_drop-menu {
+    position: absolute; }
+    .myDrop .my_drop-menu li {
+      display: none; }
+  .myDrop:hover .my_drop-menu {
+    perspective: 1000px; }
+  .myDrop:hover li {
+    display: block;
+    transform-origin: top left;
+    opacity: 0; }
+  .myDrop:hover li:nth-child(1) {
+    animation-name: menu;
+    animation-duration: 300ms;
+    animation-delay: -150ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; }
+  .myDrop:hover li:nth-child(2) {
+    animation-name: menu;
+    animation-duration: 300ms;
+    animation-delay: 0ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; }
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden; }
+
+@keyframes menu {
+  0% {
+    opacity: 0;
+    transform: rotateZ(90deg); }
+  70% {
+    transform: skewX(10deg); }
+  100% {
+    opacity: 1;
+    transform: rotateZ(0deg); } }

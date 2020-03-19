@@ -1,7 +1,7 @@
 
 
 function init(){
-
+    $(".myBurger").on("click", notScroll)
     shadow();
     navSlide();
 $('.owl-carousel').owlCarousel({
@@ -20,6 +20,14 @@ $('.owl-carousel').owlCarousel({
         }
     }
 })
+
+}
+
+//bloccare scroll quando la nav è aparta
+
+function notScroll(){
+    $('body').toggleClass('stop-scrolling')
+    $('body').hasClass('stop-scrolling') ? $('body').bind('touchmove', function(e){e.preventDefault()}) :  $('body').unbind('touchmove')
 }
 
 // slider navbar
@@ -29,15 +37,23 @@ $('.owl-carousel').owlCarousel({
     const navLinks = document.querySelectorAll('.my_nav-links li')
     //toggle nav
     burger.addEventListener('click', () =>{
+    
+    
+        /* document.addEventListener("click",handler,true); */
+
+/* function handler(e){
+    if(e.target!=="nav" || e.target!==".myBurger")
+    e.stopPropagation()
+} */
     nav.classList.toggle('nav-active');
         //animate links
     navLinks.forEach((link,index)=>{
         if(link.style.animation){
             link.style.animation = ""
             
-            console.log(index / 7 + 0.5)
         } else{
             link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.4}s`
+            
         }
     });
     //Burger animation
@@ -46,6 +62,10 @@ $('.owl-carousel').owlCarousel({
 })
     
 }
+
+
+
+
 
 
 const shadow = () => {
@@ -64,6 +84,8 @@ const shadow = () => {
 
 $(window).scroll(function(){
     $(this).scrollTop() !== 0 ? ($('.myScrollOnTop').removeClass("d-none")) : ($('.myScrollOnTop').addClass("d-none"))
+    $(this).scrollTop() !== 0 ? ($('nav').css("background-color" , "#0000009e")) : ($('nav').css("background-color" , "transparent"))
+    $(this).scrollTop() !== 0 ? ($('nav a').css("color" , "white")) : ($('nav a').css("color" , "black"))
 });
 $(".myScrollOnTop").on("click", function() {
     $("html").animate({ scrollTop: 0 }, "slow");

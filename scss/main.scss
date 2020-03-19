@@ -25,9 +25,84 @@ img{
 
 
 .myScrollOnTop{
-  position : fixed;
-  bottom:20px;
-  left:20px;
-  z-index:999;
-  transition: all 0.6s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8e8e8;
+    font-size: 20px;
+    color: #28262b;
+    padding: 10px;
+    width: 40px;
+    border-radius: 3px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    transition: all 0.5s ease;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    &:hover{
+      background: #28262b;
+      color:#e8e8e8;
+    }
+}
+
+footer{
+  background-color:#242424;
+  color:#e8e8e8;
+}
+
+.myDrop{
+  position:relative;
+   .my_drop-menu{
+    position:absolute;
+    li{
+      display:none;
+    }
+  }
+  &:hover{
+    .my_drop-menu{
+      perspective: 1000px;
+    }
+    li{
+      display:block;
+      transform-origin: top left;
+      opacity: 0;
+    }
+    li:nth-child(1){
+      animation-name: menu;
+  animation-duration: 300ms;
+  animation-delay: -150ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+    }
+    li:nth-child(2){
+      animation-name: menu;
+  animation-duration: 300ms;
+  animation-delay: 0ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+    }
+  }
+   
+}
+
+
+ .stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+} 
+
+
+@keyframes menu {
+  0% {
+    opacity: 0;
+    transform: rotateZ(90deg);
+  }
+  70% {
+    transform: skewX(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateZ(0deg);
+  }
 }
