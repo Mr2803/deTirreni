@@ -1,29 +1,33 @@
 
 
 function init(){
-    $(".myBurger").on("click", notScroll)
-    shadow();
-    navSlide();
-$('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
+    
+        $(".myBurger").on("click", notScroll)
+        shadow();
+        navSlide();
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
         }
-    }
-})
-
+    })
 }
 
-//bloccare scroll quando la nav è aparta
+
+
+
+
+//bloccare scroll quando la nav è aperta
 
 function notScroll(){
     $('body').toggleClass('stop-scrolling')
@@ -37,14 +41,6 @@ function notScroll(){
     const navLinks = document.querySelectorAll('.my_nav-links li')
     //toggle nav
     burger.addEventListener('click', () =>{
-    
-    
-        /* document.addEventListener("click",handler,true); */
-
-/* function handler(e){
-    if(e.target!=="nav" || e.target!==".myBurger")
-    e.stopPropagation()
-} */
     nav.classList.toggle('nav-active');
         //animate links
     navLinks.forEach((link,index)=>{
@@ -58,7 +54,6 @@ function notScroll(){
     });
     //Burger animation
     burger.classList.toggle('toggle');
-
 })
     
 }

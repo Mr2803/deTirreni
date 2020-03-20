@@ -1,3 +1,6 @@
+.myRow{
+  width:90%;
+}
 .flip-card {
   margin-top: 10vh;
   background-color: transparent;
@@ -67,7 +70,10 @@ section.suiteSec{
     }
   }
 
-
+@media screen and (max-width:768px){
+    .myRow{
+      width:100%;}
+}
 
 
 

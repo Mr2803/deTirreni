@@ -3,6 +3,7 @@
 @import 'intorno-a-noi';
 @import 'suite';
 @import 'contatti';
+@import 'social';
 
 *{
   margin:0;
@@ -22,6 +23,28 @@ img{
 .debug{
   border:1px solid grey;
 }
+
+#welcome{
+  position:absolute;
+  color:#e8e8e8;
+  top : 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index : 10;
+  h1{
+    font-family: 'Lora', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: 3rem;
+  }
+  h3{
+    font-family: 'Asap', sans-serif;;
+  }
+}
+
+
+
 
 
 .myScrollOnTop{
@@ -43,6 +66,7 @@ img{
     &:hover{
       background: #28262b;
       color:#e8e8e8;
+      cursor: pointer;
     }
 }
 
@@ -84,6 +108,10 @@ footer{
     }
   }
    
+}
+
+.logoContainer,.logoFooter{
+  width:250px;
 }
 
 

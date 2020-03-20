@@ -22,17 +22,13 @@
             <h4><a href="index.html">Prova</a> </h4>
         </div>
         <ul class="my_nav-links">
-            <li>
-                <div class="dropdown">
-                    <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Suite
-                    </div>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a style="color:black" class="dropdown-item" href="suite1.html">Suite1</a>
-                        <a style="color:black" class="dropdown-item" href="suite2.html">Suite2</a>
-                    </div>
-                </div>
+            <li class="myDrop">
+                <a href="">Suite</a>
+                <ul class="my_drop-menu">
+                    <li><a href="">Stanza1</a></li>
+                    <li><a href="">Stanza2</a></li>
+                </ul>
+    
             </li>
     
             <li><a href="intorno_a_noi.html">Intorno a noi</a></li>
@@ -46,7 +42,74 @@
         </div>
     </nav>
     <div class="container-fluid noGutter" style="margin-top: 10vh;">
-    <div id='map' class='map' style="position:relative;">
+        <div id='map' class='map' style="position:relative;">
+        </div>
+    </div>
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Dove siamo</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quia ipsam, nemo dolores beatae blanditiis sunt iste consequatur tempore quisquam atque dolore, illum quod? Tenetur vero expedita praesentium. Alias, adipisci.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Contattaci</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quia ipsam, nemo dolores beatae blanditiis
+                                    sunt iste consequatur tempore quisquam atque dolore, illum quod? Tenetur vero expedita praesentium. Alias, adipisci.
+                                </p>
+
+            </div>
+            <div class="col-md-4">
+                <h4>Chiamaci</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quia ipsam, nemo dolores beatae blanditiis
+                                    sunt iste consequatur tempore quisquam atque dolore, illum quod? Tenetur vero expedita praesentium. Alias, adipisci.
+                                </p>
+
+            </div>
+            <!--Grid column-->
+            <div class="mt-5 col-md-12 mb-md-0 mb-5 d-flex flex-column align-items-center justify-content-center">
+                <h4>Inviaci un messaggio diretto senza impegno</h4>
+                <form id="my-form" style="width: 50%;" action="https://formspree.io/xjvoepng" method="POST">
+            
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <div class="md-form mb-0">
+                                <label for="email">Inserisci la tua email</label>
+                                <input required type="email" id="email" name="email" class="form-control" placeholder="Email *">
+                            </div>
+                            <div class="md-form mb-0">
+                                <label for="name">Inserisci il tuo nome</label>
+                                <input required type="name" id="name" name="name" class="form-control" placeholder="Nome *">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+            
+                            <div class="md-form">
+                                <label for="body">Scrivi il tuo messaggio</label>
+                                <textarea required placeholder="Messaggio *" type="text" id="body" name="message" rows="2"
+                                    class="form-control md-textarea"></textarea>
+                            </div>
+            
+                        </div>
+                    </div>
+                    <input type="checkbox" id="informativa" name="informativa" value="">
+                    <label for="informativa">Usando questo modulo accetti che i dati in esso richiesti vengano utilizzati in conformitá al "Regolamento CE,
+                    Parlamento Europeo 27/04/2016 n° 679, G.U. 04/05/2016" (GDPR). Per conoscere le modalitá di attuazione del suddetto
+                    regolamento puoi visionare l'informativa completa</label>
+                    
+            
+                    <div class="text-center text-md-center">
+                        <button class="btn btn-primary" id="my-form-button" style="background:rgb(156, 105, 9)">Invia</button>
+                        <div id="my-form-status"></div>
+                    </div>
+            
+                </form>
+            
+            </div>
+        </div>
     </div>
 
 
@@ -68,15 +131,78 @@
     <script src="js/owl/owl.carousel.min.js"></script>
     <script src="js/app.js"></script>
     <script>
+        
         var myCoord = [14.7107277, 40.7009333]
             var map = tt.map({
                 key: 'PXlXaqWPf4QFvdznBmvVfmi3AMAscNRm',
                 container: 'map',
                 style: 'tomtom://vector/1/basic-main',
                 center: myCoord,
-                zoom: 8
+                zoom: 11
             });
             var marker = new tt.Marker().setLngLat(myCoord).addTo(map);
+
+            window.addEventListener("DOMContentLoaded", function () {
+
+                    // get the form elements defined in your form HTML above
+
+                    var form = document.getElementById("my-form");
+                    var button = document.getElementById("my-form-button");
+                    var status = document.getElementById("my-form-status");
+                    var infoAccept = "Informativa accettata"
+                    
+                    
+
+                    form.addEventListener("submit", function (ev) {
+                        ev.preventDefault();
+                        if ($("#email").val() !== "" && $("#body").val() !== "" && $('input[type="checkbox"]').prop("checked") == true) {
+                            function success() {
+                                $('#informativa').val(infoAccept)
+                                console.log($("#informativa").val())
+                                form.reset();
+                                button.style = "display: none ";
+                                
+                                status.innerHTML = "Messaggio Inviato correttamente!";
+
+                            }
+                        } else if (($("#body").val() == "") || ($("#email").val() == "" || $("#name").val() == "" || $('input[type="checkbox"]').prop("checked") == false)) {
+                            if ($("#body").val() == "") status.innerHTML = "Non puoi lasciare il campo body vuoto";
+                            if ($("#email").val() == "") status.innerHTML = "Non puoi lasciare il campo email vuoto";
+                            if ($("#name").val() == "") status.innerHTML = "Non puoi lasciare il campo nome vuoto";
+                            if ($('input[type="checkbox"]').prop("checked") == false) status.innerHTML = "Devi accettare l'informativa"
+                            
+
+                        } else {
+                            function error() {
+                                status.innerHTML = "Oops! Sembra ci sia un problema";
+                            }
+                        }
+                        
+                        var data = new FormData(form);
+                        ajax(form.method, form.action, data, success, error);
+                        
+                    });
+                });
+
+                // helper function for sending an AJAX request
+
+                function ajax(method, url, data, success, error) {
+                    
+                    var xhr = new XMLHttpRequest();
+                    xhr.open(method, url);
+                    xhr.setRequestHeader("Accept", "application/json");
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+                        if (xhr.status === 200) {
+                            success(xhr.response, xhr.responseType);
+                            console.log("questo è xrh" , xhr , "questo è xhr.response" , xhr.response , 'questo è xhr.responseType' , xhr.responseType)
+                        } else {
+                            error(xhr.status, xhr.response, xhr.responseType);
+                        }
+                    };
+                    xhr.send(data);
+                    console.log(data)
+                }
     </script>
 </body>
 

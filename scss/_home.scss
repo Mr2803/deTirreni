@@ -5,6 +5,12 @@
    }
 }
 
+.my_nav-links{
+  .logoContainer{
+    display:none;
+  }
+}
+
 .owl-item{
     margin:0 !important;
     img{
@@ -20,9 +26,14 @@
 
 @media screen and (max-width:768px){
     #carouselExampleIndicators{
-    height: 85vh;
+    height: 95vh;
     img{
-        height: 85vh;
+        height: 95vh;
+        }
+    }
+    .my_nav-links{
+        .logoContainer{
+            display:block;
         }
     } 
 }
