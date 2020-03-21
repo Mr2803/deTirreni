@@ -1,3 +1,9 @@
+.globContainer{
+    nav{
+        background-color: white;
+    }
+}
+
 nav{
 display: flex;
 padding:0.7rem;
@@ -25,7 +31,7 @@ padding:0.7rem;
     .my_nav-links{
         display:flex;
         justify-content: space-around;
-        width: 30%;
+        width: 35%;
         li{
             list-style-type: none;
         }

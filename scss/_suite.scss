@@ -5,8 +5,8 @@
   margin-top: 10vh;
   background-color: transparent;
   width: 100%;
-  height: 600px;
-  perspective: 1000px;
+  height: 550px;
+  perspective: 2000px;
   &:hover{
     .flip-card-inner{
 
@@ -34,7 +34,7 @@
   color: black;
 }
 .flip-card-back {
-  background-color: #2980b9;
+  background-color: #046988;
   color: white;
   transform: rotateY(180deg);
 }
@@ -46,18 +46,41 @@ section.suiteSec{
    img{
      height: 80vh;
    }
+   
    .nomeStanza{
      display:flex;
      position:absolute;
      height:20px ;
-     background-color : brown;
+     background-color : rgb(114, 96, 78);
+     border-radius:5px;
+     color:#e8e8e8;
      bottom : -20px;
      z-index: 20;
-     padding:30px;
+     padding:40px;
      left:30px;
      justify-content: center;
      align-items: center;
+     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     font-family: 'Lora', serif;
    }
+   .nord-ovest{
+    background-color: #046988;
+   }
+  }
+  .services{
+    font-family: 'Lora', serif;
+    img{
+      width: 20px;
+      margin-right: 5px;
+      
+    }
+    li{
+      display:flex;
+      margin:3px;
+      align-items: center;
+    }
   }
 }
 .owl-theme{

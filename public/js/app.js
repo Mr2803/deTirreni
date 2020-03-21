@@ -5,6 +5,7 @@ function init(){
         $(".myBurger").on("click", notScroll)
         shadow();
         navSlide();
+        spin();
     $('.owl-carousel').owlCarousel({
         loop:true,
         margin:10,
@@ -14,7 +15,7 @@ function init(){
                 items:1
             },
             600:{
-                items:3
+                items:2
             },
             1000:{
                 items:5
@@ -23,7 +24,14 @@ function init(){
     })
 }
 
-
+var spin = () =>{
+    $(".nomeStanza").mouseenter(function(){
+        $(".fa-compass").addClass("fa-spin")
+    })
+    $(".nomeStanza").mouseleave(function(){
+        $(".fa-compass").removeClass("fa-spin")
+    })
+}
 
 
 
@@ -80,7 +88,11 @@ const shadow = () => {
 $(window).scroll(function(){
     $(this).scrollTop() !== 0 ? ($('.myScrollOnTop').removeClass("d-none")) : ($('.myScrollOnTop').addClass("d-none"))
     $(this).scrollTop() !== 0 ? ($('nav').css("background-color" , "#0000009e")) : ($('nav').css("background-color" , "transparent"))
+    $(this).scrollTop() !== 0 ? ($('.globContainer nav').css("background-color" , "#0000009e")) : ($('.globContainer nav').css("background-color" , "white"))
     $(this).scrollTop() !== 0 ? ($('nav a').css("color" , "white")) : ($('nav a').css("color" , "black"))
+/*     $(this).scrollTop() !== 0 ? ($('.globContainer-transparent .myBurger .line1,.line2,.line3').css("background-color" , "white")) : ($('.globContainer-transparent .myBurger .line1,.line2,.line3').css("background-color" , "white"))
+ */    $(this).scrollTop() !== 0 ? ($('.globContainer .myBurger .line1,.globContainer .myBurger .line2,.globContainer .myBurger .line3').css("background-color" , "white")) : ($('.globContainer .myBurger .line1,.globContainer .myBurger .line2,.globContainer .myBurger .line3').css("background-color" , "#262626"))
+    $(this).scrollTop() !== 0 ? ($('.globContainer .logo img').attr("src","img/rosa_venti_colored.png")) : ($('.globContainer .logo img').attr("src","img/rosa_venti_colored_onWhite.png"))
 });
 $(".myScrollOnTop").on("click", function() {
     $("html").animate({ scrollTop: 0 }, "slow");
