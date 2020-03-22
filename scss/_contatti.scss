@@ -14,12 +14,35 @@ $duration: .4s;
         canvas{
             height:100%;
         }
+        cursor:grab;
+        &:active{
+            cursor:grabbing;
+        }
         /* .mapboxgl-canvas{
           position: inherit !important;
         } */
     }
 .tomtomAttribution{
   display:none;
+}
+
+#marker {
+  background-image: url('../img/marker.webp');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+.mapboxgl-popup-content{
+    background:white;
+    border-radius: 5px;
+    .infoMap{
+        font-size: 12px;
+    }
+    .mapboxgl-popup-close-button{
+        background:white;
+        border:0;
+    }
 }
 
 @-moz-keyframes dothabottomcheck{

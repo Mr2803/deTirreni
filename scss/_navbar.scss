@@ -73,6 +73,15 @@ padding:0.7rem;
     
 }
 
+@media screen and (max-width:1300px){
+    nav{
+
+        .my_nav-links{
+            width: 50% ;
+        }
+    }
+}
+
 
 @media screen and (max-width:1024px){
     nav{

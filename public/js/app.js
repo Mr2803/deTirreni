@@ -55,16 +55,16 @@ function notScroll(){
     const burger = document.querySelector('.myBurger');
     const nav = document.querySelector('.my_nav-links');
     const navLinks = document.querySelectorAll('.my_nav-links li')
-    const scrollButton = document.querySelector('.myScrollOnTop');
+    /* const scrollButton = document.querySelector('.myScrollOnTop'); */
     /* doc.addEventListener("click",() =>{
         nav.classList.remove("nav-active")
     }) */
     //toggle nav
     burger.addEventListener('click', () =>{
     nav.classList.toggle('nav-active');
-    if(nav.classList.contains('nav-active')){
+   /*  if(nav.classList.contains('nav-active')){
          scrollButton.classList.add("d-none") 
-    }  
+    }  */ 
         
         
     
