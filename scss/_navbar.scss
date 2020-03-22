@@ -1,6 +1,11 @@
 .globContainer{
     nav{
         background-color: white;
+        li{
+            a{
+                color:black
+            }
+        }
     }
 }
 
@@ -34,13 +39,23 @@ padding:0.7rem;
         width: 35%;
         li{
             list-style-type: none;
+            
         }
         a{
             text-decoration: none;
-            color:black;
+            color:#e8e8e8;
             font-weight: bold;
             letter-spacing: 3px;
             font-size: 14px;
+            &:hover{
+                color:white ;
+            }
+        }
+
+        .logoContainer{
+            img{
+                width: 80%;
+            }
         }
     }
 
@@ -86,11 +101,31 @@ padding:0.7rem;
             background:#262626;
             
             flex-direction: column;
-            align-items: center;
+            justify-content: flex-start ;
             transform:translateX(0%);
             transition:transform 0.5s ease-in;
+            
             li{
                 opacity:0;
+                /* margin-left:10px; */
+                margin-bottom: 20px;
+                width:100%;
+                padding:20px;
+                &:hover{
+                    background-color: #3b3a3a;
+                }
+            }
+            .dropped{
+                .suiteDrop{
+
+                    a{
+                        color:#8b8484 !important;
+                        &:hover{
+                            color:#e8e8e8 !important;
+                            cursor: pointer;
+                        }
+                    }
+                }
             }
             a{
                 color:white !important;
@@ -112,6 +147,10 @@ padding:0.7rem;
                 transform : rotate(45deg )translate(-5px,-6px) 
             }
     }
+
+    .suiteDropNone{
+                    display:none;
+                }
      
 }
 

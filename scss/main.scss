@@ -44,9 +44,6 @@ img{
 }
 
 
-
-
-
 .myScrollOnTop{
     display: flex;
     align-items: center;
@@ -75,40 +72,7 @@ footer{
   color:#e8e8e8;
 }
 
-.myDrop{
-  position:relative;
-   .my_drop-menu{
-    position:absolute;
-    li{
-      display:none;
-    }
-  }
-  &:hover{
-    .my_drop-menu{
-      perspective: 1000px;
-    }
-    li{
-      display:block;
-      transform-origin: top left;
-      opacity: 0;
-    }
-    li:nth-child(1){
-      animation-name: menu;
-  animation-duration: 300ms;
-  animation-delay: -150ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-    }
-    li:nth-child(2){
-      animation-name: menu;
-  animation-duration: 300ms;
-  animation-delay: 0ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-    }
-  }
-   
-}
+
 
 .logoContainer,.logoFooter{
   width:250px;
@@ -119,6 +83,19 @@ footer{
   height: 100%;
   overflow: hidden;
 } 
+
+@media screen and (max-width:768px){
+
+  .my_drop-menu{
+    top: 150%;
+    width: 70vw;
+    li{
+      background-color:#e8e8e8;
+      padding: 12px;
+    }
+  }
+
+}
 
 
 @keyframes menu {

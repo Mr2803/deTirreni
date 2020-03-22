@@ -2,6 +2,14 @@
 
 function init(){
     
+$(".myDrop_span").on("click" ,() => {
+    const suiteDropP = document.querySelectorAll('.suiteDrop p')
+    console.log(suiteDropP)
+    $(".suiteDrop").hasClass("suiteDropNone") 
+        ? $(".suiteDrop").fadeIn().removeClass("suiteDropNone") 
+        : $(".suiteDrop").hide().addClass("suiteDropNone")
+    
+})
         $(".myBurger").on("click", notScroll)
         shadow();
         navSlide();
@@ -47,9 +55,19 @@ function notScroll(){
     const burger = document.querySelector('.myBurger');
     const nav = document.querySelector('.my_nav-links');
     const navLinks = document.querySelectorAll('.my_nav-links li')
+    const scrollButton = document.querySelector('.myScrollOnTop');
+    /* doc.addEventListener("click",() =>{
+        nav.classList.remove("nav-active")
+    }) */
     //toggle nav
     burger.addEventListener('click', () =>{
     nav.classList.toggle('nav-active');
+    if(nav.classList.contains('nav-active')){
+         scrollButton.classList.add("d-none") 
+    }  
+        
+        
+    
         //animate links
     navLinks.forEach((link,index)=>{
         if(link.style.animation){
@@ -65,11 +83,6 @@ function notScroll(){
 })
     
 }
-
-
-
-
-
 
 const shadow = () => {
     var cards = document.getElementsByClassName('card');
@@ -89,9 +102,8 @@ $(window).scroll(function(){
     $(this).scrollTop() !== 0 ? ($('.myScrollOnTop').removeClass("d-none")) : ($('.myScrollOnTop').addClass("d-none"))
     $(this).scrollTop() !== 0 ? ($('nav').css("background-color" , "#0000009e")) : ($('nav').css("background-color" , "transparent"))
     $(this).scrollTop() !== 0 ? ($('.globContainer nav').css("background-color" , "#0000009e")) : ($('.globContainer nav').css("background-color" , "white"))
-    $(this).scrollTop() !== 0 ? ($('nav a').css("color" , "white")) : ($('nav a').css("color" , "black"))
-/*     $(this).scrollTop() !== 0 ? ($('.globContainer-transparent .myBurger .line1,.line2,.line3').css("background-color" , "white")) : ($('.globContainer-transparent .myBurger .line1,.line2,.line3').css("background-color" , "white"))
- */    $(this).scrollTop() !== 0 ? ($('.globContainer .myBurger .line1,.globContainer .myBurger .line2,.globContainer .myBurger .line3').css("background-color" , "white")) : ($('.globContainer .myBurger .line1,.globContainer .myBurger .line2,.globContainer .myBurger .line3').css("background-color" , "#262626"))
+    $(this).scrollTop() !== 0 ? ($('.globContainer nav a').css("color" , "#e8e8e8")) : ($('.globContainer nav a').css("color" , "black"))
+    $(this).scrollTop() !== 0 ? ($('.globContainer .myBurger .line1,.globContainer .myBurger .line2,.globContainer .myBurger .line3').css("background-color" , "#e8e8e8")) : ($('.globContainer .myBurger .line1,.globContainer .myBurger .line2,.globContainer .myBurger .line3').css("background-color" , "#262626"))
     $(this).scrollTop() !== 0 ? ($('.globContainer .logo img').attr("src","img/rosa_venti_colored.png")) : ($('.globContainer .logo img').attr("src","img/rosa_venti_colored_onWhite.png"))
 });
 $(".myScrollOnTop").on("click", function() {

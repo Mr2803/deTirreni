@@ -1,6 +1,8 @@
 @charset "UTF-8";
 .globContainer nav {
   background-color: white; }
+  .globContainer nav li a {
+    color: black; }
 
 nav {
   display: flex;
@@ -32,10 +34,14 @@ nav {
       list-style-type: none; }
     nav .my_nav-links a {
       text-decoration: none;
-      color: black;
+      color: #e8e8e8;
       font-weight: bold;
       letter-spacing: 3px;
       font-size: 14px; }
+      nav .my_nav-links a:hover {
+        color: white; }
+    nav .my_nav-links .logoContainer img {
+      width: 80%; }
   nav .myBurger {
     display: none; }
     nav .myBurger div {
@@ -62,11 +68,22 @@ nav {
     top: 0;
     background: #262626;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
     transform: translateX(0%);
     transition: transform 0.5s ease-in; }
     nav .my_nav-links li {
-      opacity: 0; }
+      opacity: 0;
+      /* margin-left:10px; */
+      margin-bottom: 20px;
+      width: 100%;
+      padding: 20px; }
+      nav .my_nav-links li:hover {
+        background-color: #3b3a3a; }
+    nav .my_nav-links .dropped .suiteDrop a {
+      color: #8b8484 !important; }
+      nav .my_nav-links .dropped .suiteDrop a:hover {
+        color: #e8e8e8 !important;
+        cursor: pointer; }
     nav .my_nav-links a {
       color: white !important; }
   nav .myBurger {
@@ -77,7 +94,9 @@ nav {
   nav .toggle .line2 {
     opacity: 0; }
   nav .toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px); } }
+    transform: rotate(45deg) translate(-5px, -6px); }
+  .suiteDropNone {
+    display: none; } }
 
 @keyframes navLinkFade {
   from {
@@ -485,37 +504,20 @@ footer {
   background-color: #242424;
   color: #e8e8e8; }
 
-.myDrop {
-  position: relative; }
-  .myDrop .my_drop-menu {
-    position: absolute; }
-    .myDrop .my_drop-menu li {
-      display: none; }
-  .myDrop:hover .my_drop-menu {
-    perspective: 1000px; }
-  .myDrop:hover li {
-    display: block;
-    transform-origin: top left;
-    opacity: 0; }
-  .myDrop:hover li:nth-child(1) {
-    animation-name: menu;
-    animation-duration: 300ms;
-    animation-delay: -150ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out; }
-  .myDrop:hover li:nth-child(2) {
-    animation-name: menu;
-    animation-duration: 300ms;
-    animation-delay: 0ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out; }
-
 .logoContainer, .logoFooter {
   width: 250px; }
 
 .stop-scrolling {
   height: 100%;
   overflow: hidden; }
+
+@media screen and (max-width: 768px) {
+  .my_drop-menu {
+    top: 150%;
+    width: 70vw; }
+    .my_drop-menu li {
+      background-color: #e8e8e8;
+      padding: 12px; } }
 
 @keyframes menu {
   0% {
