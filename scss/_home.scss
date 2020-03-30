@@ -23,6 +23,12 @@
 .owl-dots{
     display:none;
 }
+.owl-stage{
+    cursor:grab;
+    &:active{
+        cursor:grabbing !important;
+    }
+}
 
 @media screen and (max-width:768px){
     #carouselExampleIndicators{

@@ -129,6 +129,11 @@ nav {
 .owl-dots {
   display: none; }
 
+.owl-stage {
+  cursor: grab; }
+  .owl-stage:active {
+    cursor: grabbing !important; }
+
 @media screen and (max-width: 768px) {
   #carouselExampleIndicators {
     height: 95vh; }
@@ -180,6 +185,19 @@ nav {
         transition: all 0.6s ease;
         text-decoration: none;
         color: #242424; }
+
+.description p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "Raleway";
+  line-height: 24.99px;
+  text-transform: none;
+  letter-spacing: 0px;
+  color: #565656; }
+  .description p strong {
+    font-weight: 900;
+    color: black; }
 
 .shadow {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; }
